@@ -25,7 +25,7 @@ public class User {
 	@Column(name = "last_name")
 	private String lastName;
 
-//	private Date birthDate;
+    @Column(name="email")
 	private String email;
 
 	@Column(name="birth_date")
@@ -34,6 +34,11 @@ public class User {
 
 	@Formula("lower(datediff(curdate(), birth_date)/365)")
 	private int age;
+
+	@Embedded
+	private Address address = new Address();
+
+
 //	private Date lastUpdatedDate;
 //	private String lastUpdatedBy;
 //	private Date createdDate;

@@ -1,5 +1,6 @@
 package utils;
 
+import entity.Bank;
 import entity.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -16,7 +17,12 @@ public class HibernateUtil {
 
 		try{
 			Configuration configuration = new Configuration();
+
 			configuration.addAnnotatedClass(User.class);
+			configuration.addAnnotatedClass(Bank.class);
+
+			configuration.addPackage("entity");
+
 			return configuration.buildSessionFactory(new StandardServiceRegistryBuilder().build());
 		}
 		catch(Exception exc){
