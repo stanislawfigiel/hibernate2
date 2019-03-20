@@ -6,6 +6,10 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Entity
 @Data
@@ -35,5 +39,17 @@ public class Bank implements Serializable {
 
 	)
 	Address address;
+
+	@ElementCollection
+	@CollectionTable(name = "contact", joinColumns = @JoinColumn(name = "BANK_ID"))
+	@Column(name = "CONTACT")
+	List<String> contacts = new ArrayList<>();
+
+
+	@ElementCollection
+	@CollectionTable(name = "contact_mapped", joinColumns = @JoinColumn(name = "BANK_ID"))
+	@Column(name = "CONTACT")
+	@MapKeyColumn(name = "POSITION_TYPE")
+	Map<String, String> contactsMapped = new HashMap<>();
 }
 

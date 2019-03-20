@@ -17,6 +17,13 @@ public class Application {
 			session.beginTransaction();
 			Bank bank=  new Bank();
             bank.setName("BANK 1");
+            bank.getContacts().add("AA");
+            bank.getContacts().add("BB");
+            bank.getContacts().add("CC");
+
+            bank.getContactsMapped().put("AA","SSS");
+            bank.getContactsMapped().put("BB","QQQQQQ");
+
 			Address address = new Address();
 			address.setAddressLine1("ADDRESS LINE 1");
 			address.setAddressLine2("ADDRESS LINE 2");
@@ -34,7 +41,6 @@ public class Application {
 			session.save(user);
 			session.save(bank);
 			session.getTransaction().commit();
-			//	session.close();
 			session.refresh(user);
 			System.out.println("age:" + user.getAge());
 		} catch (RuntimeException exc) {
