@@ -1,5 +1,6 @@
 package entity;
 
+import entity.enumerations.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -55,6 +56,10 @@ public class User {
 
 	)
 	private List<Address> addresses = new ArrayList<>();
+
+	@Enumerated(EnumType.STRING)
+	@Column(name = "user_type")
+	private UserType userType;
 
 
 //	private Date lastUpdatedDate;

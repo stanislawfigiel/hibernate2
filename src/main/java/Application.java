@@ -1,6 +1,7 @@
 import entity.Address;
 import entity.Bank;
 import entity.User;
+import entity.enumerations.UserType;
 import org.hibernate.Session;
 import utils.HibernateUtil;
 
@@ -35,6 +36,7 @@ public class Application {
 			user.setFirstName("aaaa");
 			user.setLastName("bbbb");
 			user.setEmail("wwwwwww@wp.pl");
+			user.setUserType(UserType.ADMIN);
 			user.setAddress(address);
 			user.getAddresses().add(address);
 			bank.setAddress(address);
