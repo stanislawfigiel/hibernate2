@@ -36,6 +36,7 @@ public class Application {
 			user.setLastName("bbbb");
 			user.setEmail("wwwwwww@wp.pl");
 			user.setAddress(address);
+			user.getAddresses().add(address);
 			bank.setAddress(address);
 
 			session.save(user);
