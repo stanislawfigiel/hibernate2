@@ -2,6 +2,7 @@ package utils;
 
 import entity.Bank;
 import entity.Currency;
+import entity.Market;
 import entity.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -22,6 +23,7 @@ public class HibernateUtil {
 			configuration.addAnnotatedClass(User.class);
 			configuration.addAnnotatedClass(Bank.class);
 			configuration.addAnnotatedClass(Currency.class);
+			configuration.addAnnotatedClass(Market.class);
 
 			configuration.addPackage("entity");
 

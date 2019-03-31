@@ -17,7 +17,7 @@ public class Currency {
 	@Id
 	@Column
 	private String name;
-	
+
 	@Id
 	@Column(name = "country_name")
 	private  String countryName;
