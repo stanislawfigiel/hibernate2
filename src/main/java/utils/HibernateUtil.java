@@ -1,9 +1,6 @@
 package utils;
 
-import entity.Bank;
-import entity.Currency;
-import entity.Market;
-import entity.User;
+import entity.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -24,6 +21,8 @@ public class HibernateUtil {
 			configuration.addAnnotatedClass(Bank.class);
 			configuration.addAnnotatedClass(Currency.class);
 			configuration.addAnnotatedClass(Market.class);
+			configuration.addAnnotatedClass(Bond.class);
+
 
 			configuration.addPackage("entity");
 
