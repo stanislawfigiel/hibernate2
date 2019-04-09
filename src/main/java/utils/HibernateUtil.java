@@ -22,6 +22,9 @@ public class HibernateUtil {
 			configuration.addAnnotatedClass(Currency.class);
 			configuration.addAnnotatedClass(Market.class);
 			configuration.addAnnotatedClass(Bond.class);
+			configuration.addAnnotatedClass(InheritInvestmentTablePerClass.class);
+			configuration.addAnnotatedClass(BondTablePerClass.class);
+			configuration.addAnnotatedClass(Portfolio.class);
 
 
 			configuration.addPackage("entity");
