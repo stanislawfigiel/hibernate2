@@ -23,7 +23,7 @@ public abstract class InheritInvestmentSingleTable {
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "portfolio_id")
-	private Portfolio portfolio;
+	private PortfolioSingleTable portfolio;
 
 
 	@Column(name = "name")
