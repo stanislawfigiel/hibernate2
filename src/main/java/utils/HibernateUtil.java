@@ -25,6 +25,7 @@ public class HibernateUtil {
 			configuration.addAnnotatedClass(InheritInvestmentTablePerClass.class);
 			configuration.addAnnotatedClass(BondTablePerClass.class);
 			configuration.addAnnotatedClass(Portfolio.class);
+			configuration.addAnnotatedClass(PortfolioSingleTable.class);
 			configuration.addAnnotatedClass(InheritInvestmentSingleTable.class);
 			configuration.addAnnotatedClass(BondSingleTable.class);
 

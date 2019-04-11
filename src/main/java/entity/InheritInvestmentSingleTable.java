@@ -12,9 +12,7 @@ import javax.persistence.*;
 public abstract class InheritInvestmentSingleTable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
-	@TableGenerator(name = "key_generator", table = "finances_keys", pkColumnName = "pk_name", pkColumnValue =
-			"pk_value")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "investment_id")
 	private Long id;
 

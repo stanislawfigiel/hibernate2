@@ -7,6 +7,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import utils.HibernateUtil;
 
+import java.math.BigDecimal;
+
 public class Application4 {
 
 	public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class Application4 {
 		Transaction tx1 = null;
 
 		try{
+			BigDecimal bd = new BigDecimal(11);
 			sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			tx = session.beginTransaction();
@@ -26,12 +29,18 @@ public class Application4 {
 			BondSingleTable bond = new BondSingleTable();
 			bond.setName("AAA");
 			bond.setIssuer("ISSUER");
+			bond.setValue(bd);
 			bond.setPortfolio(portfolio);
 			portfolio.getInvestment().add(bond);
 
 
 			session.persist(portfolio);
 			tx.commit();
+
+
+			BondSingleTable prt = session.get(BondSingleTable.class, 453L);
+
+			System.out.println("OBJECT:" +  prt);
 			session.close();
 
 
